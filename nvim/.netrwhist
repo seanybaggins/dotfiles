@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/sean/ipendulum/implementation/src'
+let g:netrw_dirhist_5='/home/sean/ipendulum/implementation/src/bin'
+let g:netrw_dirhist_4='/home/sean/proc-macro-workshop/builder/src'
+let g:netrw_dirhist_3='/home/sean/fillmaster-update/Fillmaster_FX-Code/wifi/test'
+let g:netrw_dirhist_2='/home/sean/.config/alacritty'
+let g:netrw_dirhist_1='/home/sean/.config/fish'
