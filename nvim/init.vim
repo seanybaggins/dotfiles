@@ -87,6 +87,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 " =============================================================================
 call plug#begin('~/.vim/plugged')
 
+" Auto completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 
@@ -269,6 +270,9 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "------------------------------------------------------------
+" End of Coc Configuration
+"------------------------------------------------------------
+
 
 " Permanent undo
 set undodir=~/.vimdid
@@ -276,7 +280,10 @@ set undofile
 
 " Auto close braces
 inoremap " ""<left>
+inoremap "" ""<right>
 inoremap [ []<left>
+inoremap [] []<right>
 inoremap { {}<left>
+inoremap {} {}<right>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
