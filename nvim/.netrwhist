@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/sean/ipendulum/implementation/target/thumbv7em-none-eabihf/debug'
+let g:netrw_dirhist_9='/home/sean/ipendulum/implementation/src'
+let g:netrw_dirhist_8='/home/sean/ipendulum/drivers/es38'
+let g:netrw_dirhist_7='/home/sean/ipendulum/implementation/src/bin'
 let g:netrw_dirhist_6='/home/sean/ipendulum/implementation/src'
 let g:netrw_dirhist_5='/home/sean/ipendulum/implementation/src/bin'
 let g:netrw_dirhist_4='/home/sean/proc-macro-workshop/builder/src'
