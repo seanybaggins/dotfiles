@@ -104,12 +104,15 @@ Plug 'cespare/vim-toml'
 call plug#end()
 
 " Rust
+" ----------------------------------------------------------------------------
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 let g:rust_clip_command = 'xclip -selection clipboard'
+" ----------------------------------------------------------------------------
 
 " Colors
+" ----------------------------------------------------------------------------
 if !has('gui_running')
   set t_Co=256
 endif
@@ -121,6 +124,9 @@ set background=dark
 let base16colorspace=256
 let g:base16_shell_path="~/.config/base16-shell/scripts"
 colorscheme base16-default-dark
+" Brighter comments
+call Base16hi("Comment", g:base16_gui04, "", g:base16_cterm04, "", "", "")
+
 
 " Coc suggested config
 " https://github.com/neoclide/coc.nvim
