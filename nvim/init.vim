@@ -87,9 +87,12 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 " =============================================================================
 call plug#begin('~/.vim/plugged')
 
-" Auto completion
+" Visual
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'andymass/vim-matchup'
+Plug 'chriskempson/base16-vim'
 
 " Language support
 Plug 'rust-lang/rust.vim'
@@ -97,6 +100,7 @@ Plug 'dag/vim-fish'
 Plug 'plasticboy/vim-markdown'
 Plug 'stephpy/vim-yaml'
 Plug 'cespare/vim-toml'
+
 call plug#end()
 
 " Rust
@@ -105,9 +109,22 @@ let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 let g:rust_clip_command = 'xclip -selection clipboard'
 
+" Colors
+if !has('gui_running')
+  set t_Co=256
+endif
+if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
+  " screen does not (yet) support truecolor
+  set termguicolors
+endif
+set background=dark
+let base16colorspace=256
+let g:base16_shell_path="~/.config/base16-shell/scripts"
+colorscheme base16-default-dark
+
 " Coc suggested config
 " https://github.com/neoclide/coc.nvim
-"------------------------------------------------------------
+"------------------------------------------------------------------------
 " TextEdit might fail if hidden is not set.
 set hidden
 

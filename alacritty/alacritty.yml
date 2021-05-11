@@ -176,7 +176,6 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Base16 Classic Dark 256 - alacritty color config
-# Jason Heeris (http://heeris.id.au)
 colors:
   # Default colors
   primary:
