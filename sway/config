@@ -81,6 +81,9 @@ input "1267:12632:ELAN050A:00_04F3:3158_Touchpad" {
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    # Take a screenshot
+    bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/screenshot.png
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
