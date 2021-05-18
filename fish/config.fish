@@ -24,6 +24,15 @@ and not set --query TMUX
     exec tmux
 end
 
+# Auto remove docker containers after they have run
+function docker 
+    if test $argv[1] = "run"
+        command docker run --rm $argv[2..]
+    else 
+        command docker $argv
+    end
+end
+
 # Base16 Shell
 if status --is-interactive
     set BASE16_SHELL "$HOME/.config/base16-shell/"
