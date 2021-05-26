@@ -1,6 +1,7 @@
 alias vim "nvim"
 alias ls "exa"
 alias k "kubectl"
+alias cat "bat"
 
 # Get rid of the fish greeting message
 set fish_greeting
