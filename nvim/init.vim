@@ -97,7 +97,6 @@ Plug 'chriskempson/base16-vim'
 " Language support
 Plug 'rust-lang/rust.vim'
 Plug 'dag/vim-fish'
-Plug 'plasticboy/vim-markdown'
 Plug 'stephpy/vim-yaml'
 Plug 'cespare/vim-toml'
 
@@ -126,7 +125,6 @@ let g:base16_shell_path="~/.config/base16-shell/scripts"
 colorscheme base16-default-dark
 " Brighter comments
 call Base16hi("Comment", g:base16_gui04, "", g:base16_cterm04, "", "", "")
-
 
 " Coc suggested config
 " https://github.com/neoclide/coc.nvim

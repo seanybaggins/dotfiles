@@ -1,5 +1,7 @@
 alias vim "nvim"
 alias ls "exa"
+alias k "kubectl"
+alias cat "bat"
 
 # Get rid of the fish greeting message
 set fish_greeting
@@ -31,6 +33,13 @@ function docker
     else 
         command docker $argv
     end
+end
+
+# Add the gem home to path variable so I can use jekyll and other ruby gems
+# Modified from https://wiki.archlinux.org/title/Ruby#RubyGems
+if ruby --version > /dev/null
+    set --export GEM_HOME (ruby -e 'puts Gem.user_dir')
+    set --export --append PATH "$GEM_HOME/bin"
 end
 
 # Base16 Shell
