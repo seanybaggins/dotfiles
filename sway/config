@@ -58,7 +58,7 @@ input "type:keyboard" {
 # Change the scroll direction of my touchpad on my laptop
 input "1267:12632:ELAN050A:00_04F3:3158_Touchpad" {
     dwt enabled 
-    tap enabled 
+    tap disabled 
     natural_scroll enabled
     middle_emulation enabled
 }
