@@ -26,18 +26,9 @@ and not set --query TMUX
     exec tmux
 end
 
-# Auto remove docker containers after they have run
-function docker 
-    if test $argv[1] = "run"
-        command docker run --rm $argv[2..]
-    else 
-        command docker $argv
-    end
-end
-
 # Add the gem home to path variable so I can use jekyll and other ruby gems
 # Modified from https://wiki.archlinux.org/title/Ruby#RubyGems
-if ruby --version > /dev/null
+if command --search ruby > /dev/null
     set --export GEM_HOME (ruby -e 'puts Gem.user_dir')
     set --export --append PATH "$GEM_HOME/bin"
 end
