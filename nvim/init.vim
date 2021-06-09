@@ -1,6 +1,5 @@
-" Comments in Vimscript start with a `"`.
-
-" If you open this file in Vim, it'll be syntax highlighted for you.
+" Leader character is useful for personal mappings
+let mapleader = "\<Space>"
 
 " Vim is based on Vi. Setting `nocompatible` switches from the default
 " Vi-compatibility mode and enables useful Vim functionality. This
@@ -14,18 +13,14 @@ set nocompatible
 " Turn on syntax highlighting.
 syntax on
 
+" Encoding to rule them all
+set encoding=UTF-8
+
 " Disable the default Vim startup message.
 set shortmess+=I
 
 " Show line numbers.
 set number
-
-" This enables relative line numbering mode. With both number and
-" relativenumber enabled, the current line shows the true line number, while
-" all other lines (above and below) are numbered relative to the current line.
-" This is useful because you can tell, at a glance, what count is needed to
-" jump up or down to a particular line, by {count}k to go up or {count}j to go
-" down.
 set relativenumber
 
 " Always show the status line at the bottom, even if you only have one window open.
@@ -63,12 +58,7 @@ set noerrorbells visualbell t_vb=
 " sometimes be convenient.
 set mouse+=a
 
-" Try to prevent bad habits like using the arrow keys for movement. This is
-" not the only possible bad habit. For example, holding down the h/j/k/l keys
-" for movement, rather than using more efficient movement commands, is also a
-" bad habit. The former is enforceable through a .vimrc, while we don't know
-" how to prevent the latter.
-" Do this in normal mode...
+" Prevent bad habits
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
@@ -82,17 +72,24 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 " Make a tab insert four spaces"
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
+" Permanent undo
+set undodir=~/.vimdid
+set undofile
+
+" Rust
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
+let g:rust_clip_command = 'xclip -selection clipboard'
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
 " =============================================================================
 " # PLUGINS
 " =============================================================================
 call plug#begin('~/.vim/plugged')
-
-" Visual
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'itchyny/lightline.vim'
-Plug 'machakann/vim-highlightedyank'
-Plug 'andymass/vim-matchup'
-Plug 'chriskempson/base16-vim'
 
 " Language support
 Plug 'rust-lang/rust.vim'
@@ -100,16 +97,27 @@ Plug 'dag/vim-fish'
 Plug 'stephpy/vim-yaml'
 Plug 'cespare/vim-toml'
 
+" Auto close braces
+Plug 'jiangmiao/auto-pairs'
+
+" Change surrounded elements
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+
+" Visual
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'itchyny/lightline.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'andymass/vim-matchup'
+Plug 'chriskempson/base16-vim'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons' " This should always be the last pluggin. Also, nerd-fonts-bitstream-vera-mono package must be installed
+
 call plug#end()
 
-" Rust
 " ----------------------------------------------------------------------------
-let g:rustfmt_autosave = 1
-let g:rustfmt_emit_files = 1
-let g:rustfmt_fail_silently = 0
-let g:rust_clip_command = 'xclip -selection clipboard'
-" ----------------------------------------------------------------------------
-
 " Colors
 " ----------------------------------------------------------------------------
 if !has('gui_running')
@@ -125,10 +133,15 @@ let g:base16_shell_path="~/.config/base16-shell/scripts"
 colorscheme base16-default-dark
 " Brighter comments
 call Base16hi("Comment", g:base16_gui04, "", g:base16_cterm04, "", "", "")
+" ----------------------------------------------------------------------------
+" END
+" Colors
+" ----------------------------------------------------------------------------
 
+" ----------------------------------------------------------------------------
 " Coc suggested config
 " https://github.com/neoclide/coc.nvim
-"------------------------------------------------------------------------
+"-----------------------------------------------------------------------------
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -290,21 +303,9 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-"------------------------------------------------------------
-" End of Coc Configuration
-"------------------------------------------------------------
+" ----------------------------------------------------------------------------
+" END
+" Coc suggested config
+" https://github.com/neoclide/coc.nvim
+"-----------------------------------------------------------------------------
 
-
-" Permanent undo
-set undodir=~/.vimdid
-set undofile
-
-" Auto close braces
-inoremap " ""<left>
-inoremap "" ""<right>
-inoremap [ []<left>
-inoremap [] []<right>
-inoremap { {}<left>
-inoremap {} {}<right>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
