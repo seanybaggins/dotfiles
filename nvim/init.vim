@@ -86,6 +86,13 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
+" Toggle between NERDTree and working directory
+nnoremap <leader>t :NERDTreeFocus<CR>
+
 " =============================================================================
 " # PLUGINS
 " =============================================================================
@@ -103,6 +110,9 @@ Plug 'jiangmiao/auto-pairs'
 " Change surrounded elements
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+
+" Open NERDTree at root of cargo project
+Plug 'airblade/vim-rooter'
 
 " Visual
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
