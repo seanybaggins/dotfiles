@@ -72,6 +72,11 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 " Make a tab insert four spaces"
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
+" Auto newlines
+set linebreak " Break lines at word (requires Wrap lines)
+set showbreak=+++ " Wrap-broken line prefix
+set textwidth=100 " Line wrap (number of cols)
+
 " Permanent undo
 set undodir=~/.vimdid
 set undofile
@@ -93,6 +98,12 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " Toggle between NERDTree and working directory
 nnoremap <leader>t :NERDTreeFocus<CR>
 
+" Jenkins file support
+autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+
+" Stop folding with markdown plugin
+let g:vim_markdown_folding_disabled = 1
+
 " =============================================================================
 " # PLUGINS
 " =============================================================================
@@ -103,6 +114,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'dag/vim-fish'
 Plug 'stephpy/vim-yaml'
 Plug 'cespare/vim-toml'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " Auto close braces
 Plug 'jiangmiao/auto-pairs'
