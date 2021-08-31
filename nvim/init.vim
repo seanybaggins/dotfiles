@@ -116,6 +116,7 @@ Plug 'stephpy/vim-yaml'
 Plug 'cespare/vim-toml'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'vim-python/python-syntax'
 
 " Auto close braces
 Plug 'jiangmiao/auto-pairs'
