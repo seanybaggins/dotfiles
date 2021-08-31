@@ -1,7 +1,9 @@
 alias vim "nvim"
 alias ls "exa"
-alias k "kubectl"
 alias cat "bat"
+
+# So tmux will load with 256 range colors
+alias tmux "tmux -2"
 
 # Get rid of the fish greeting message
 set fish_greeting
@@ -9,16 +11,11 @@ set fish_greeting
 # Setting the cargo bin to the front of the path variable
 # so cargo defaults to the rustup cargo and not the one
 # managed by pacman and other packages.
-set -x --prepend PATH ~/.cargo/bin
+set --export --prepend PATH ~/.cargo/bin
 
 # Use vim as the default editor
-set -x EDITOR nvim 
-set -x VISUAL nvim
-
-# Auto start sway at login
-if test -z "$DISPLAY" && test (tty) = "/dev/tty1"
-    exec sway
-end
+set --export EDITOR nvim 
+set --export VISUAL nvim
 
 # Auto start tmux
 if status is-interactive
@@ -34,8 +31,14 @@ if command --search ruby > /dev/null
 end
 
 # Base16 Shell
+# https://github.com/chriskempson/base16-shell
 if status --is-interactive
-    set BASE16_SHELL "$HOME/.config/base16-shell/"
-    source "$BASE16_SHELL/profile_helper.fish"
+  set --export BASE16_SHELL "$HOME/.config/base16-shell"
+  source "$BASE16_SHELL/profile_helper.fish"
 end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /opt/anaconda/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
 
