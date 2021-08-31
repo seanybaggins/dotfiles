@@ -1,0 +1,152 @@
+// -*- mode: json -*-
+
+{
+	"layer": "top",
+	"position": "top",
+
+	"modules-left": [
+		"sway/workspaces",
+		"custom/right-arrow-dark"
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"network",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"pulseaudio",
+                "custom/left-arrow-light",
+		"custom/left-arrow-dark",
+                "custom/printer",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"disk",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+                "custom/power",
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"format": "{name}"
+	},
+
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%m-%d}",
+		"tooltip": false
+	},
+        "clock#3": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+
+        "network": {
+            "interval": 5,
+            "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
+            "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+            "format-disconnected": "⚠  Disconnected",
+            "tooltip-format": "{ifname}: {ipaddr}",
+            "on-click": "alacritty -e nmtui",
+        },
+
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "alacritty -e pulsemixer",
+	},
+	"memory": {
+		"interval": 5,
+		"format": "Mem {}%",
+                "on-click": "alacritty -e htop"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "CPU {usage:2}%",
+                "on-click": "alacritty -e htop"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+                // Connected to AC
+                "format": "  {icon}  {capacity}%", // Icon: bolt
+                // Not connected to AC
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+                "tooltip": true
+	},
+	"disk": {
+		"interval": 5,
+		"format": "Disk {percentage_used:2}%",
+		"path": "/"
+	},
+	"tray": {
+		"icon-size": 20
+	},
+        "custom/power": {
+		"format": "",
+		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Shutdown'  'shutdown -h now' -b 'Restart' 'shutdown -r now'  -b 'Logout' 'swaymsg exit' --background=#292b2e --button-background=#1a1a1a --button-border=#ffffff --border-bottom=#002b33 --button-text=#fdf6e3 --text=#fdf6e3"
+	},
+        "custom/printer": {
+                "format": "朗",
+                "tooltip": false,
+                "on-click": "hp-toolbox"
+        }
+}
+
