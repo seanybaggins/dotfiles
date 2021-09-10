@@ -1,6 +1,7 @@
 alias vim "nvim"
 alias ls "exa"
 alias cat "bat"
+alias xclip "xclip -selection c"
 
 # So tmux will load with 256 range colors
 alias tmux "tmux -2"
