@@ -2,6 +2,7 @@ alias vim "nvim"
 alias ls "exa"
 alias cat "bat"
 alias xclip "xclip -selection c"
+alias py-debug "python -m pudb"
 
 # So tmux will load with 256 range colors
 alias tmux "tmux -2"
@@ -37,6 +38,11 @@ if status --is-interactive
   set --export BASE16_SHELL "$HOME/.config/base16-shell"
   source "$BASE16_SHELL/profile_helper.fish"
 end
+
+# Better syntax highlighting in man pages
+# Requires bat package
+# https://github.com/sharkdp/bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
