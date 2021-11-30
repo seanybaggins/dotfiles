@@ -75,7 +75,18 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 " Auto newlines
 set linebreak " Break lines at word (requires Wrap lines)
 set showbreak=+++ " Wrap-broken line prefix
-set textwidth=100 " Line wrap (number of cols)
+set textwidth=80 " Line wrap (number of cols)
+
+" Wrapping options
+set formatoptions=tc " wrap text and comments using textwidth
+set formatoptions+=r " continue comments when pressing ENTER in I mode
+set formatoptions+=q " enable formatting of comments with gq
+set formatoptions+=n " detect lists for formatting
+set formatoptions+=b " auto-wrap in insert mode, and do not wrap old long lines
+
+" Rulers
+set colorcolumn=80
+set colorcolumn+=100
 
 " Permanent undo
 set undodir=~/.vimdid
@@ -104,6 +115,15 @@ autocmd BufNewFile,BufRead Jenkinsfile setf groovy
 " Stop folding with markdown plugin
 let g:vim_markdown_folding_disabled = 1
 
+" Allow Strikethroughs in vim
+let g:vim_markdown_strikethrough = 1
+
+" Run Ale for only C#
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\}
+
 " =============================================================================
 " # PLUGINS
 " =============================================================================
@@ -118,8 +138,18 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-python/python-syntax'
 
+" C# and Unity Development
+Plug 'OmniSharp/omnisharp-vim' " for C# language support
+Plug 'dense-analysis/ale' " for Error corrections in C#
+
 " Auto close braces
 Plug 'jiangmiao/auto-pairs'
+
+" Auto format my markdown and other config files
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['markdown', 'yaml', 'html'] }
 
 " Change surrounded elements
 Plug 'tpope/vim-surround'
