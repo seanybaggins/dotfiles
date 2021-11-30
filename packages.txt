@@ -1,0 +1,3 @@
+fish
+ttf-nerd-fonts-symbols
+nodejs # Required for neovim coc

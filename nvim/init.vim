@@ -171,26 +171,6 @@ Plug 'ryanoasis/vim-devicons' " This should always be the last pluggin. Also, ne
 
 call plug#end()
 
-" ----------------------------------------------------------------------------
-" Colors
-" ----------------------------------------------------------------------------
-if !has('gui_running')
-  set t_Co=256
-endif
-if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
-  " screen does not (yet) support truecolor
-  set termguicolors
-endif
-set background=dark
-let base16colorspace=256
-let g:base16_shell_path="~/.config/base16-shell/scripts"
-colorscheme base16-default-dark
-" Brighter comments
-call Base16hi("Comment", g:base16_gui04, "", g:base16_cterm04, "", "", "")
-" ----------------------------------------------------------------------------
-" END
-" Colors
-" ----------------------------------------------------------------------------
 
 " ----------------------------------------------------------------------------
 " Coc suggested config
