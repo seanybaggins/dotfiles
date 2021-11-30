@@ -1,1 +1,13 @@
-/home/sean/.xprofile
+#!/bin/bash
+
+#####################################
+# Swapping caps and escape for xorg #
+#####################################
+xmodmap -e "clear lock" 
+# Set the escape to capslock function
+#xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock" 
+# Set capslock to escape function
+xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+
+~/set_natural_touchpad_scrolling.sh
+~/set_wall_paper.py
