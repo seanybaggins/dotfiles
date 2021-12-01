@@ -32,6 +32,10 @@ if command --search ruby > /dev/null
     set --export --append PATH "$GEM_HOME/bin"
 end
 
+if command --search neofetch > /dev/null
+    neofetch
+end
+
 # Base16 Shell
 # https://github.com/chriskempson/base16-shell
 if status --is-interactive
