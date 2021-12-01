@@ -8,9 +8,9 @@
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.config/nvim: nvim
     ~/.xprofile: xorg/.xprofile
-    ~/.config/i3:
+    ~/.config/i3/config:
       force: true
-      path: i3
+      path: i3/config
     ~/.config/fish: 
       force: true
       path: fish
