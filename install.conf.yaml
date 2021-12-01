@@ -33,7 +33,7 @@
     stderr: true
     description: Making fish the default shell
   - 
-    command: vim +PlugUpgrade +PlugInstall +PlugUpdate 
+    command: nvim +PlugUpgrade +PlugInstall +PlugUpdate 
     stdout: true
     stdin: true
     stderr: true
