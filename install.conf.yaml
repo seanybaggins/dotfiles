@@ -32,3 +32,9 @@
     stdin: true
     stderr: true
     description: Making fish the default shell
+  - 
+    command: vim +PlugUpgrade +PlugInstall +PlugUpdate 
+    stdout: true
+    stdin: true
+    stderr: true
+    description: Installing vim plugins

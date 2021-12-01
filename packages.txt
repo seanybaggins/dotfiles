@@ -1,5 +1,6 @@
 fish
 neovim
+vim-plug
 ttf-nerd-fonts-symbols
 nodejs
 exa
