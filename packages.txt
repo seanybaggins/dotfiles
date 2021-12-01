@@ -1,3 +1,6 @@
 fish
+neovim
 ttf-nerd-fonts-symbols
-nodejs # Required for neovim coc
+nodejs
+exa
+bat

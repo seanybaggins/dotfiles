@@ -8,9 +8,9 @@
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.config/nvim: nvim
     ~/.xprofile: xorg/.xprofile
-    ~/.config/i3:
-      force: true
-      path: i3
+      #~/.config/i3:
+      #force: true
+      #path: i3
     ~/.config/fish: 
       force: true
       path: fish
@@ -26,4 +26,9 @@
     stdin: true
     stderr: true
     description: Installing Arch Packages
-
+  - 
+    command: chsh -s $(which fish)
+    stdout: true
+    stdin: true
+    stderr: true
+    description: Making fish the default shell
