@@ -23,7 +23,7 @@ set --export EDITOR nvim
 set --export VISUAL nvim
 
 # Auto start tmux
-if status is-interactive
+if status --is-interactive
 and not set --query TMUX
     exec tmux
 end
@@ -35,7 +35,7 @@ if command --search ruby > /dev/null
     set --export --append PATH "$GEM_HOME/bin"
 end
 
-if status is-interactive 
+if status --is-interactive 
 and command --search neofetch > /dev/null
     neofetch
 end
