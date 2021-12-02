@@ -15,6 +15,9 @@ set fish_greeting
 # managed by pacman and other packages.
 set --export --prepend PATH ~/.cargo/bin
 
+# Makes sure local packages are loaded
+set --export --append PATH ~/.local/bin
+
 # Use vim as the default editor
 set --export EDITOR nvim 
 set --export VISUAL nvim
@@ -32,7 +35,8 @@ if command --search ruby > /dev/null
     set --export --append PATH "$GEM_HOME/bin"
 end
 
-if command --search neofetch > /dev/null
+if status is-interactive 
+and command --search neofetch > /dev/null
     neofetch
 end
 
