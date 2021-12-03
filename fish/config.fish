@@ -52,8 +52,4 @@ end
 # https://github.com/sharkdp/bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /opt/anaconda/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
 

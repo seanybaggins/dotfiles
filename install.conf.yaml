@@ -11,6 +11,7 @@
     ~/.config/i3/config:
       force: true
       path: i3/config
+    ~/.config/base16-shell: base16-shell
     ~/.config/fish: 
       force: true
       path: fish
