@@ -15,6 +15,9 @@
     ~/.config/fish: 
       force: true
       path: fish
+    ~/.gitconfig: 
+      force: true
+      path: git/.gitconfig
 
 #- create:
 

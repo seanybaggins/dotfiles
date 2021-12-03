@@ -6,3 +6,4 @@ nodejs
 exa
 bat
 fd
+git-delta

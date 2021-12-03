@@ -1,0 +1,18 @@
+[user]
+    name = Sean Link
+    email = sean.link@netally.com
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[diff]
+    colorMoved = default
+
+[delta]
+    navigate = true
+    line-numbers = true
+    side-by-side = true
+
