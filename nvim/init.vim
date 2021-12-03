@@ -166,6 +166,8 @@ Plug 'andymass/vim-matchup'
 Plug 'chriskempson/base16-vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons' " This should always be the last pluggin. Also, nerd-fonts-bitstream-vera-mono package must be installed
 
