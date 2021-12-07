@@ -7,3 +7,4 @@ exa
 bat
 fd
 git-delta
+tldr
