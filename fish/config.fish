@@ -20,6 +20,61 @@ and not set --query TMUX
     exec tmux
 end
 
+# Helper functions for navigating open andriod projects
+function setcdr
+    if not test -d $PWD/.repo;
+        echo "No such file or directory $PWD/.repo"
+        return 1
+    end
+    echo "Setting CDR=$PWD"
+    set --global CDR $PWD
+end
+
+function cdr
+    if not set --query CDR;
+        echo '$CDR not set'
+        return 1
+    end
+    cd "$CDR/$argv"
+end
+
+function cdks
+    cdr "vendor/nxp-opensource/kernel_imx/$argv"
+end
+
+function cdbs
+    cdr "vendor/nxp-opensource/uboot-imx/$argv"
+end
+
+function cdd
+    if test -d "$CDR/device/nxp/imx8m";
+        set CDD "$CDR/device/nxp/imx8m"
+    else
+        set CDD "$CDR/device/fsl"
+    end
+    cd "$CDD/$TARGET_PRODUCT/$argv"
+end
+
+function cdpo
+    cdr out/target/product/$TARGET_PRODUCT/$argv
+end
+
+function cdko
+    cdpo obj/KERNEL_OBJ/$argv
+end
+
+function cdbo
+    cdpo obj/UBOOT_OBJ/$argv
+end
+
+function cdm
+    cdr vendor/hnt/manufacturing/$argv
+end
+
+function cdf
+    cdr vendor/hnt/factory_test/$argv
+end
+
 # Add the gem home to path variable so I can use jekyll and other ruby gems
 # Modified from https://wiki.archlinux.org/title/Ruby#RubyGems
 if command --search ruby > /dev/null
