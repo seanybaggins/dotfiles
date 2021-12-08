@@ -10,14 +10,6 @@ alias tmux "tmux -2"
 # Get rid of the fish greeting message
 set fish_greeting
 
-# Setting the cargo bin to the front of the path variable
-# so cargo defaults to the rustup cargo and not the one
-# managed by pacman and other packages.
-set --export --prepend PATH ~/.cargo/bin
-
-# Makes sure local packages are loaded
-set --export --append PATH ~/.local/bin
-
 # Use vim as the default editor
 set --export EDITOR nvim 
 set --export VISUAL nvim
