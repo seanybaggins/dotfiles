@@ -56,27 +56,31 @@ function cdd
     else
         set CDD "$CDR/device/fsl"
     end
-    cd "$CDD/$TARGET_PRODUCT/$argv"
+    # Specail characters for color coding
+    # https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+    echo -e "\e[1;33mWarning: \e[0m TARGET_PRODUCT hardcoded to ackg3 in fish"
+    cd "$CDD/ackg3/$argv"
 end
 
 function cdpo
-    cdr out/target/product/$TARGET_PRODUCT/$argv
+    echo -e "\e[1;33mWarning: \e[0m TARGET_PRODUCT hardcoded to ackg3 in fish"
+    cdr "out/target/product/ackg3/$argv"
 end
 
 function cdko
-    cdpo obj/KERNEL_OBJ/$argv
+    cdpo "obj/KERNEL_OBJ/$argv"
 end
 
 function cdbo
-    cdpo obj/UBOOT_OBJ/$argv
+    cdpo "obj/UBOOT_OBJ/$argv"
 end
 
 function cdm
-    cdr vendor/hnt/manufacturing/$argv
+    cdr "vendor/hnt/manufacturing/$argv"
 end
 
 function cdf
-    cdr vendor/hnt/factory_test/$argv
+    cdr "vendor/hnt/factory_test/$argv"
 end
 
 # Add the gem home to path variable so I can use jekyll and other ruby gems
