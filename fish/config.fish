@@ -14,6 +14,10 @@ set fish_greeting
 set --export EDITOR nvim 
 set --export VISUAL nvim
 
+# So fish knows where to look for local binaries when not on arch
+set --export --append PATH ~/.cargo/bin
+set --export --append PATH ~/.local/bin
+
 # Auto start tmux
 if status --is-interactive
 and not set --query TMUX
