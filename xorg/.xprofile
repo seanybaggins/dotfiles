@@ -9,4 +9,3 @@ xmodmap -e "clear lock"
 # Set capslock to escape function
 xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
-~/configs/scripts/set_wall_paper.py
