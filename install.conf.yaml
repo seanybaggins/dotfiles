@@ -24,27 +24,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - 
-    command: curl -L https://nixos.org/nix/install | sh
-    stdout: true
-    stdin: true
-    stderr: true
-    description: Installing nix for package management
-  - 
-    command: source ~/.nix-profile/etc/profile.d/nix.sh && xargs -d '\n' -- nix-env -iA < packages.txt
-    stdout: true
-    stdin: true
-    stderr: true
-    description: Installing Packages
-  - 
-    command: chsh -s $(which zsh)
-    stdout: true
-    stdin: true
-    stderr: true
-    description: Making zsh the default shell
-  - 
-    command: nvim +PlugUpgrade +PlugInstall +PlugUpdate 
-    stdout: true
-    stdin: true
-    stderr: true
-    description: Installing vim plugins
+  - [./shell_commands.sh, Running shell commands]

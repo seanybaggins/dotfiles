@@ -2,7 +2,6 @@ nixpkgs.zsh
 nixpkgs.antibody
 nixpkgs.neovim
 nixpkgs.vimPlugins.vim-plug
-nixpkgs.nerdfonts
 nixpkgs.nodejs
 nixpkgs.exa
 nixpkgs.bat
