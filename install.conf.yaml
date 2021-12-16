@@ -25,7 +25,13 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - 
-    command: nix-env -iA - < packages.txt
+    command: curl -L https://nixos.org/nix/install | sh
+    stdout: true
+    stdin: true
+    stderr: true
+    description: Installing nix for package management
+  - 
+    command: source ~/.nix-profile/etc/profile.d/nix.sh && xargs -d '\n' -- nix-env -iA - < packages.txt
     stdout: true
     stdin: true
     stderr: true
