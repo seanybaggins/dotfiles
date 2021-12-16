@@ -15,7 +15,9 @@
     ~/.gitconfig: 
       force: true
       path: git/.gitconfig
-    ~/.zshrc: zsh/.zshrc
+    ~/.zshrc: 
+      force: true
+      path: zsh/.zshrc
     ~/.zsh_plugins.txt: zsh/.zsh_plugins.txt
 
 #- create:
@@ -29,18 +31,17 @@
     stderr: true
     description: Installing nix for package management
   - 
-    command: nix-env -iA - < packages.txt
-    stdout: true
-    stdin: true
-    stderr: true
-    description: Installing Packages
-  - 
     command: . /home/sean/.nix-profile/etc/profile.d/nix.sh
     stdout: true
     stdin: true
     stderr: true
     description: Sourcing nix
-    
+  - 
+    command: nix-env -iA - < packages.txt
+    stdout: true
+    stdin: true
+    stderr: true
+    description: Installing Packages
   - 
     command: chsh -s $(which zsh)
     stdout: true
