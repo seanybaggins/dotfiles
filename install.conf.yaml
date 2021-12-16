@@ -24,4 +24,9 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [./shell_commands.sh, Running shell commands]
+  - 
+    description: "Run test script"
+    command: "./shell_commands.sh"
+    stdout: true
+    stderr: true
+    stdin: true
