@@ -31,7 +31,7 @@
     stderr: true
     description: Installing nix for package management
   - 
-    command: source ~/.nix-profile/etc/profile.d/nix.sh && xargs -d '\n' -- nix-env -iA - < packages.txt
+    command: source ~/.nix-profile/etc/profile.d/nix.sh && xargs -d '\n' -- nix-env -iA < packages.txt
     stdout: true
     stdin: true
     stderr: true
