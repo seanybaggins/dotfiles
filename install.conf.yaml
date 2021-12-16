@@ -31,7 +31,7 @@
     stderr: true
     description: Installing nix for package management
   - 
-    command: . /home/sean/.nix-profile/etc/profile.d/nix.sh
+    command: source ~/.nix-profile/etc/profile.d/nix.sh
     stdout: true
     stdin: true
     stderr: true
