@@ -12,9 +12,6 @@
       force: true
       path: i3/config
     ~/.config/base16-shell: base16-shell
-    ~/.config/fish: 
-      force: true
-      path: fish
     ~/.gitconfig: 
       force: true
       path: git/.gitconfig
@@ -23,19 +20,24 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-    # TODO: Install Plug
   - 
-    command: yay -S - < packages.txt
+    command: curl -L https://nixos.org/nix/install | sh
     stdout: true
     stdin: true
     stderr: true
-    description: Installing Arch Packages
+    description: Installing nix for package management
   - 
-    command: chsh -s $(which fish)
+    command: nix-env -iA - < packages.txt
     stdout: true
     stdin: true
     stderr: true
-    description: Making fish the default shell
+    description: Installing Packages
+  - 
+    command: chsh -s $(which zsh)
+    stdout: true
+    stdin: true
+    stderr: true
+    description: Making zsh the default shell
   - 
     command: nvim +PlugUpgrade +PlugInstall +PlugUpdate 
     stdout: true
