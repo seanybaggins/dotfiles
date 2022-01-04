@@ -15,6 +15,30 @@ if [ -e /home/sean/.nix-profile/etc/profile.d/nix.sh ]; then . /home/sean/.nix-p
     && [ -z "${TMUX}" ] \
     && { tmux attach || tmux; } >/dev/null 2>&1
 
+# Run neofetch if it exists. Super useful for getting the status info of a 
+# # device
+if type neofetch > /dev/null; then
+    neofetch
+fi
+
+# Alias's
+alias vim="nvim"
+alias ls="exa"
+alias la="exa -lah"
+alias cat="bat"
+alias xclip="xclip -selection c"
+alias py-debug="python -m pudb"
+
+# So tmux will load with 256 range colors
+alias tmux="tmux -2"
+
+# Better syntax highlighting in man pages
+# Requires bat package
+# https://github.com/sharkdp/bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export EDITOR=nvim
+export VISUAL=nvim
+
 source ~/.zsh_plugins.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
