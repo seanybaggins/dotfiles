@@ -23,6 +23,8 @@ fi
 # ~/.zshrc
 if [ -e /home/sean/.nix-profile/etc/profile.d/nix.sh ]; then . /home/sean/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+source ~/.zsh_plugins.sh
+
 # Alias's
 alias vim="nvim"
 alias ls="exa"
@@ -41,7 +43,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR=nvim
 export VISUAL=nvim
 
-source ~/.zsh_plugins.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
