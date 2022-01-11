@@ -8,3 +8,4 @@ nixpkgs.bat
 nixpkgs.fd
 nixpkgs.delta
 nixpkgs.tldr
+nixpkgs.tmux

@@ -16,3 +16,5 @@
     line-numbers = true
     side-by-side = true
 
+[color]
+	ui = auto
