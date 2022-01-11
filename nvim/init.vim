@@ -160,6 +160,7 @@ Plug 'airblade/vim-rooter'
 
 " Visual
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'andymass/vim-matchup'
@@ -357,7 +358,7 @@ if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
 endif
 set background=dark
 let base16colorspace=256
-let g:base16_shell_path="~/.config/base16-shell/scripts"
+let g:base16_shell_path="~/dotfiles/base16-shell/scripts"
 colorscheme base16-default-dark
 " Brighter comments
 call Base16hi("Comment", g:base16_gui04, "", g:base16_cterm04, "", "", "")
