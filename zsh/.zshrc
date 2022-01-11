@@ -47,6 +47,8 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Add any functions that may be useful
+source "$HOME/dotfiles/zsh/.zfuncs/setcdr"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
