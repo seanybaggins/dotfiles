@@ -1,6 +1,6 @@
 # Run neofetch if it exists. Super useful for getting the status info of a 
 # device
-if type neofetch > /dev/null; then
+if [ -x "$(command -v neofetch)" ] && [ -n "${TMUX}" ]; then
     neofetch
 fi
 
