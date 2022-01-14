@@ -9,3 +9,4 @@ nixpkgs.fd
 nixpkgs.delta
 nixpkgs.tldr
 nixpkgs.tmux
+nixpkgs.neofetch
