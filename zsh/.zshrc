@@ -17,6 +17,14 @@ BASE16_SHELL="$HOME/dotfiles/base16-shell/"
     && [ -z "${TMUX}" ] \
     && { tmux -2 attach || tmux -2; } >/dev/null 2>&1
 
+# Add any functions that may be useful
+source "$HOME/dotfiles/zsh/.zfuncs/setcdr"
+
+if [ -d ~/g3aosp ]; then
+    cd ~/g3aosp
+    setcdr
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -46,9 +54,6 @@ alias tmux="tmux -2"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR=nvim
 export VISUAL=nvim
-
-# Add any functions that may be useful
-source "$HOME/dotfiles/zsh/.zfuncs/setcdr"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
