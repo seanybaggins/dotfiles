@@ -10,3 +10,4 @@ nixpkgs.delta
 nixpkgs.tldr
 nixpkgs.tmux
 nixpkgs.neofetch
+nixpkgs.ripgrep
