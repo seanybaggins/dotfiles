@@ -11,7 +11,7 @@ setcdr()
     cdd()  { cd $CDD/$TARGET_PRODUCT/$1; }
     cdpo() { cdr out/target/product/$TARGET_PRODUCT/$1; }
     cdko() { cdpo obj/KERNEL_OBJ/$1; }
-    cdbo() { cdpo obj/UBOOT_OBJ/$1; }
+    cdbo() { cdpo obj/BOOTLOADER_OBJ/$1; }
     cdm()  { cdr vendor/hnt/manufacturing/$1; }
     cdf()  { cdr vendor/hnt/factory_test/$1; }
 
