@@ -78,7 +78,7 @@ set showbreak=+++ " Wrap-broken line prefix
 set textwidth=80 " Line wrap (number of cols)
 
 " Wrapping options
-set formatoptions=tc " wrap text and comments using textwidth
+"set formatoptions=tc " wrap text and comments using textwidth
 set formatoptions+=r " continue comments when pressing ENTER in I mode
 set formatoptions+=q " enable formatting of comments with gq
 set formatoptions+=n " detect lists for formatting
