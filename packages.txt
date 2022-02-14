@@ -11,3 +11,4 @@ nixpkgs.tldr
 nixpkgs.tmux
 nixpkgs.neofetch
 nixpkgs.ripgrep
+nixpkgs.bear
