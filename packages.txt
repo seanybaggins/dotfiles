@@ -12,3 +12,4 @@ nixpkgs.tmux
 nixpkgs.neofetch
 nixpkgs.ripgrep
 nixpkgs.bear
+nixpkgs.openocd
