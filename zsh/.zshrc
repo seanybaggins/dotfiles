@@ -10,6 +10,9 @@ BASE16_SHELL="$HOME/dotfiles/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+# ~/.zshrc
+if [ -e /home/sean/.nix-profile/etc/profile.d/nix.sh ]; then . /home/sean/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 # if tmux is executable and not inside a tmux session, then try to attach.
 # if attachment fails, start a new session
 # source: https://wiki.archlinux.org/title/tmux#Start_tmux_on_every_shell_login
@@ -31,9 +34,6 @@ fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# ~/.zshrc
-if [ -e /home/sean/.nix-profile/etc/profile.d/nix.sh ]; then . /home/sean/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 source ~/.zsh_plugins.sh
 
