@@ -4,8 +4,11 @@
 
 - clean: ['~']
 
+- create:
+  - ~/.tmux/
 - link:
     ~/.tmux.conf: tmux/.tmux.conf
+    ~/.tmux/plugins: tmux/plugins
     ~/.config/nvim: nvim
     ~/.xprofile: xorg/.xprofile
     ~/.config/i3/config:
