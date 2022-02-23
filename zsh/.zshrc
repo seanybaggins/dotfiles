@@ -20,6 +20,9 @@ if [ -e /home/sean/.nix-profile/etc/profile.d/nix.sh ]; then . /home/sean/.nix-p
     && [ -z "${TMUX}" ] \
     && { tmux -2 attach || tmux -2; } >/dev/null 2>&1
 
+# Not sure why .local/bin is not on the path by default
+PATH+=:~/.local/bin
+
 # Add any functions that may be useful
 source "$HOME/dotfiles/zsh/.zfuncs/setcdr"
 
