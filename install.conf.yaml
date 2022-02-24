@@ -6,7 +6,11 @@
 
 - create:
   - ~/.tmux/
+  - ~/.config/gdb
 - link:
+    ~/.config/gdb: 
+      force: true
+      path: gdb
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.tmux/plugins: tmux/plugins
     ~/.config/nvim: nvim
