@@ -7,10 +7,14 @@
 - create:
   - ~/.tmux/
   - ~/.config/gdb
+  - ~/.gdbinit.d
 - link:
-    ~/.config/gdb: 
+    ~/.config/gdb/gdbinit: 
       force: true
-      path: gdb
+      path: gdb/gdb-dashboard/.gdbinit
+    ~/.gdbinit.d: 
+      force: true
+      path: gdb/personal
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.tmux/plugins: tmux/plugins
     ~/.config/nvim: nvim
