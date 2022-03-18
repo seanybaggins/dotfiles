@@ -1,4 +1,3 @@
 # Disable security function that prevents me from loading binaries
 set auto-load safe-path /
 
-set editing-mode vi
