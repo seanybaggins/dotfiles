@@ -26,8 +26,8 @@ PATH+=:~/.local/bin
 # Add any functions that may be useful
 source "$HOME/dotfiles/zsh/.zfuncs/setcdr"
 
-if [ -d ~/g3aosp ]; then
-    cd ~/g3aosp
+if [ -d ~/g3aosp11 ]; then
+    cd ~/g3aosp11
     setcdr
 fi
 
