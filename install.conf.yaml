@@ -33,7 +33,7 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - 
-    description: "Install nix and nix related packages"
+    description: "Install rust via rustup"
     command: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
     stdout: true
     stderr: true
