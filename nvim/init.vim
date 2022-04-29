@@ -138,6 +138,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-python/python-syntax'
 Plug 'LnL7/vim-nix'
+Plug 'rubberduck203/aosp-vim'
 
 " C# and Unity Development
 Plug 'OmniSharp/omnisharp-vim' " for C# language support
